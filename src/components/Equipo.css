@@ -10,13 +10,23 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
   gap: 3rem;
-  align-items: end;
+  /* stretch lets each column fill the full row height independently,
+     so the center text block can self-center regardless of its length */
+  align-items: stretch;
   min-height: 420px;
 }
 
-/* ── Images ────────────────────────────────────────────── */
+/* ── Image columns — flex containers that pin images to bottom ── */
+.equipo__img-left,
+.equipo__img-right {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ── Image wrappers ─────────────────────────────────────── */
 .equipo__img-wrap {
   position: relative;
+  width: 100%;
 }
 
 .equipo__img-wrap img {
@@ -26,12 +36,7 @@
   display: block;
 }
 
-/* Imaginery_3 — grounded (cut below), sits at bottom, fade masks the cut */
-.equipo__img-wrap--grounded {
-  display: flex;
-  align-items: flex-end;
-}
-
+/* Imaginery_3 — grounded (cut below), fade masks the cut edge */
 .equipo__img-wrap--grounded img {
   max-height: 380px;
   object-position: top center;
@@ -48,18 +53,11 @@
   pointer-events: none;
 }
 
-/* Imaginery_5 — floats, full transparent background */
-.equipo__img-wrap--floating {
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 1rem;
-}
-
+/* Imaginery_5 — full image, floats slightly above baseline */
 .equipo__img-wrap--floating img {
   max-height: 360px;
   object-position: bottom center;
   filter: drop-shadow(0 8px 32px rgba(0,0,0,0.14));
-  /* Subtle float — slight vertical offset vs grounded image */
   transform: translateY(-16px);
 }
 
@@ -68,8 +66,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* stays centered regardless of text length */
   text-align: center;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1rem;
   position: relative;
   z-index: 1;
 }
@@ -92,7 +91,7 @@
   font-weight: 400;
   quotes: none;
   margin-bottom: 2rem;
-  max-width: 380px;
+  max-width: 340px;
 }
 
 .equipo__divider {
@@ -114,6 +113,7 @@
   .equipo__inner {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+    align-items: start;
     min-height: auto;
     gap: 2rem;
   }
@@ -144,7 +144,7 @@
   }
 
   .equipo__img-left {
-    display: none; /* show only one on very small screens */
+    display: none;
   }
 
   .equipo__img-right {
