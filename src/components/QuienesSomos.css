@@ -1,0 +1,105 @@
+.quienes {
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.quienes__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+/* ── Text side ─────────────────────────────────────────── */
+.quienes__text {
+  padding: 100px 6% 100px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quienes__text p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 1.25rem;
+}
+
+.quienes__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Image col ─────────────────────────────────────────── */
+.quienes__image-col {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  /* slight lighter navy to create depth separation */
+  background: var(--navy-mid);
+}
+
+/* Subtle diagonal divider between text and image */
+.quienes__image-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 80px;
+  height: 100%;
+  background: var(--navy);
+  clip-path: polygon(0 0, 60% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.quienes__img-frame {
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  max-width: 420px;
+  padding-bottom: 0;
+}
+
+.quienes__img-frame img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  /* Subtle drop shadow to help it pop from navy bg */
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.5));
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .quienes__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .quienes__text {
+    padding: 72px 5% 48px;
+  }
+
+  .quienes__image-col {
+    min-height: 380px;
+    padding: 2rem 5% 0;
+  }
+
+  .quienes__image-col::before {
+    display: none;
+  }
+
+  .quienes__img-frame {
+    width: 60%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 540px) {
+  .quienes__img-frame {
+    width: 72%;
+  }
+}

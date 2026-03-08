@@ -1,0 +1,158 @@
+.equipo {
+  background: var(--gray-light);
+  overflow: hidden;
+  padding: 80px 5%;
+}
+
+.equipo__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  min-height: 420px;
+}
+
+/* ── Images ────────────────────────────────────────────── */
+.equipo__img-wrap {
+  position: relative;
+}
+
+.equipo__img-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Imaginery_3 — grounded (cut below), sits at bottom, fade masks the cut */
+.equipo__img-wrap--grounded {
+  display: flex;
+  align-items: flex-end;
+}
+
+.equipo__img-wrap--grounded img {
+  max-height: 380px;
+  object-position: top center;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.12));
+}
+
+.equipo__img-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--gray-light) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Imaginery_5 — floats, full transparent background */
+.equipo__img-wrap--floating {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+}
+
+.equipo__img-wrap--floating img {
+  max-height: 360px;
+  object-position: bottom center;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.14));
+  /* Subtle float — slight vertical offset vs grounded image */
+  transform: translateY(-16px);
+}
+
+/* ── Center slogan ─────────────────────────────────────── */
+.equipo__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.equipo__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.equipo__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.55;
+  color: var(--navy);
+  font-weight: 400;
+  quotes: none;
+  margin-bottom: 2rem;
+  max-width: 380px;
+}
+
+.equipo__divider {
+  width: 36px;
+  height: 2px;
+  background: var(--blue);
+  margin-bottom: 1.25rem;
+}
+
+.equipo__subtext {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  letter-spacing: 0.06em;
+  font-style: italic;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .equipo__inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    gap: 2rem;
+  }
+
+  .equipo__center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 0 0 1rem;
+  }
+
+  .equipo__img-left {
+    grid-row: 2;
+  }
+
+  .equipo__img-right {
+    grid-row: 2;
+  }
+
+  .equipo__img-wrap--grounded img,
+  .equipo__img-wrap--floating img {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 540px) {
+  .equipo__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .equipo__img-left {
+    display: none; /* show only one on very small screens */
+  }
+
+  .equipo__img-right {
+    grid-row: 2;
+  }
+
+  .equipo__img-wrap--floating img {
+    transform: none;
+    max-height: 240px;
+  }
+}
