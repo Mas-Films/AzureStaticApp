@@ -25,17 +25,20 @@ export default function Contacto() {
     if (errors[name]) setErrors((err) => ({ ...err, [name]: '' }))
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const errs = validate()
-    if (Object.keys(errs).length > 0) {
-      setErrors(errs)
-      return
-    }
-    // Here you would send the form data to your backend or email service
-    setSent(true)
-    setForm(INITIAL)
-  }
+  const handleSubmit = async (e) => {
+  e.preventDefault()
+  const errs = validate()
+  if (Object.keys(errs).length > 0) { setErrors(errs); return }
+
+  await fetch('https://formspree.io/f/mbdzlajo', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(form),
+  })
+
+  setSent(true)
+  setForm(INITIAL)
+}
 
   return (
     <section id="contacto" className="contacto" ref={ref}>
