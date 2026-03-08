@@ -1,4 +1,4 @@
-# MAS FILMS – Sitio Web v2
+# MAS FILMS – Sitio Web
 
 Sitio web oficial de MAS FILMS, productora audiovisual con sede en Costa Rica.
 
@@ -35,10 +35,8 @@ npm run build
 | Imaginery_4.png | Qué Hacemos (marco decorativo) |
 | Imaginery_5.png | Sección Equipo (derecha) |
 
-> Imaginery_1.png ya NO se usa. Puedes eliminarla.
-
 ## Portafolio
-Edita /src/data/portfolioData.js para agregar proyectos.
+/src/data/portfolioData.js para agregar proyectos.
 
 ## Colores
 - --blue: #3291B6
