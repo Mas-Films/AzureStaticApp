@@ -19,13 +19,13 @@ export default function Equipo() {
 
         {/* Center slogan */}
         <div className="equipo__center reveal">
-          <span className="equipo__eyebrow">Nuestro equipo</span>
+          <span className="equipo__eyebrow">Perspectiva</span>
           <blockquote className="equipo__quote">
-            "Detrás de cada imagen hay una historia. Detrás de cada historia, hay un equipo que la hace posible."
+            "No hacemos videos. Creamos historias que conectan."
           </blockquote>
           <div className="equipo__divider" />
           <p className="equipo__subtext">
-            Dos lentes. Un propósito.
+            Más Films, Videomarketing Costa Rica.
           </p>
         </div>
 
