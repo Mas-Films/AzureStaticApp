@@ -4,6 +4,7 @@ import Carousel from './components/Carousel'
 import Servicios from './components/Servicios'
 import QuienesSomos from './components/QuienesSomos'
 import QueHacemos from './components/QueHacemos'
+import Equipo from './components/Equipo'
 import MisionVision from './components/MisionVision'
 import Portafolio from './components/Portafolio'
 import Contacto from './components/Contacto'
@@ -20,6 +21,7 @@ export default function App() {
         <Servicios />
         <QuienesSomos />
         <QueHacemos />
+        <Equipo />
         <MisionVision />
         <Portafolio />
         <Contacto />

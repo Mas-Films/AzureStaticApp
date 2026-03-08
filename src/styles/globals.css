@@ -7,9 +7,12 @@
 :root {
   --blue: #3291B6;
   --blue-dark: #2577a0;
+  --navy: #0d1b2e;
+  --navy-mid: #122338;
+  --navy-light: #1a2f47;
   --black: #000000;
   --white: #FFFFFF;
-  --gray-light: #f5f5f5;
+  --gray-light: #f4f4f2;
   --gray-mid: #e0e0e0;
   --gray-text: #555555;
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -97,11 +100,19 @@ button {
   margin-bottom: 1rem;
 }
 
+.section-title--white {
+  color: var(--white);
+}
+
 .blue-underline {
   width: 48px;
   height: 3px;
   background: var(--blue);
   margin-bottom: 2rem;
+}
+
+.blue-underline--white {
+  background: rgba(255,255,255,0.35);
 }
 
 .blue-underline.centered {
