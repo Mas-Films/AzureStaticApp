@@ -1,5 +1,6 @@
 .quehacemos {
-  background: var(--navy-light);
+  /* Same base as Quiénes Somos — the two sections read as one continuous dark block */
+  background: var(--navy);
   overflow: hidden;
 }
 
@@ -17,12 +18,14 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background: var(--navy);
+  /* --navy-mid matches the image col of Quiénes Somos directly above,
+     so the two side panels feel connected */
+  background: var(--navy-mid);
   overflow: hidden;
   min-height: 480px;
 }
 
-/* Diagonal divider on right side */
+/* Diagonal divider mirrors the one in Quiénes Somos (same direction, right side) */
 .quehacemos__image-col::after {
   content: '';
   position: absolute;
@@ -30,59 +33,17 @@
   right: -40px;
   width: 80px;
   height: 100%;
-  background: var(--navy-light);
+  background: var(--navy);
   clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
   z-index: 3;
 }
 
-/* Frame decoration lines — suggests the left edge continues */
-.quehacemos__frame-deco {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.quehacemos__frame-line {
-  position: absolute;
-  background: var(--blue);
-  opacity: 0.5;
-}
-
-.quehacemos__frame-line--top {
-  top: 36px;
-  left: 28px;
-  right: 28px;
-  height: 1px;
-}
-
-.quehacemos__frame-line--left {
-  top: 36px;
-  left: 28px;
-  width: 1px;
-  bottom: 0; /* goes all the way down since image is cut at bottom */
-}
-
-/* Corner accent box */
-.quehacemos__corner-accent {
-  position: absolute;
-  top: 28px;
-  left: 20px;
-  width: 16px;
-  height: 16px;
-  border-top: 2px solid var(--blue);
-  border-left: 2px solid var(--blue);
-  z-index: 4;
-}
-
-/* Image wrapper */
+/* ── Image wrapper ─────────────────────────────────────── */
 .quehacemos__img-wrap {
   position: relative;
   z-index: 1;
   width: 80%;
   max-width: 400px;
-  /* Push image to bottom — since it's cut at the bottom,
-     we let it bleed out naturally and fade it */
   align-self: flex-end;
   margin-bottom: 0;
 }
@@ -91,21 +52,19 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  object-position: bottom right;
+  object-position: bottom center;
   display: block;
   filter: drop-shadow(0 0 24px rgba(0,0,0,0.4));
-  /* Shift image right so the left-cut edge starts from frame line */
-  transform: translateX(8%);
 }
 
-/* Bottom fade — masks the cut bottom edge of Imaginery_4 */
+/* Bottom fade — kept in case image is still slightly cut at the base */
 .quehacemos__img-fade {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 80px;
-  background: linear-gradient(to top, var(--navy) 0%, transparent 100%);
+  background: linear-gradient(to top, var(--navy-mid) 0%, transparent 100%);
   z-index: 2;
   pointer-events: none;
 }

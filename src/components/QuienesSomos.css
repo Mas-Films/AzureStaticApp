@@ -37,11 +37,10 @@
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-  /* slight lighter navy to create depth separation */
   background: var(--navy-mid);
 }
 
-/* Subtle diagonal divider between text and image */
+/* Diagonal divider between text and image panel */
 .quienes__image-col::before {
   content: '';
   position: absolute;
@@ -59,7 +58,6 @@
   z-index: 1;
   width: 85%;
   max-width: 420px;
-  padding-bottom: 0;
 }
 
 .quienes__img-frame img {
@@ -68,7 +66,6 @@
   object-fit: contain;
   object-position: bottom center;
   display: block;
-  /* Subtle drop shadow to help it pop from navy bg */
   filter: drop-shadow(0 8px 32px rgba(0,0,0,0.5));
 }
 

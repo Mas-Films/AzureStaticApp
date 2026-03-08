@@ -8,24 +8,16 @@ export default function QueHacemos() {
   return (
     <section id="que-hacemos" className="quehacemos" ref={ref}>
       <div className="quehacemos__inner">
-        {/* Image col — left side this time for visual variety */}
+        {/* Image col — left side */}
         <div className="quehacemos__image-col reveal-left">
-          {/* Decorative frame lines to "complete" the cut image */}
-          <div className="quehacemos__frame-deco">
-            <div className="quehacemos__frame-line quehacemos__frame-line--top" />
-            <div className="quehacemos__frame-line quehacemos__frame-line--left" />
-          </div>
           <div className="quehacemos__img-wrap">
             <img
               src={img4}
               alt="Jose filmando hacia la derecha"
               loading="lazy"
             />
-            {/* Bottom fade to merge the cut bottom edge naturally */}
             <div className="quehacemos__img-fade" />
           </div>
-          {/* Corner accent */}
-          <div className="quehacemos__corner-accent" />
         </div>
 
         {/* Text side */}
